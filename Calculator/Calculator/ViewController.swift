@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var display: UILabel? //'?' , '!' 모두 Optional을 뜻한다.
+    @IBOutlet weak var display: UILabel! //'?' , '!' 모두 Optional을 뜻한다.
     var userIsInTheMiddleOfTyping = false
     //swift에서 모든 property는 초기값을 가져야 한다.
     
@@ -21,11 +21,11 @@ class ViewController: UIViewController {
         
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display!.text!
-            display!.text = textCurrentlyInDisplay + digit
+            display.text = textCurrentlyInDisplay + digit//UILabel! 를 했기 떄문에 모두 안붙여도 된다.
         } else{
-            display!.text = digit
+            display.text = digit
         }
-        userIsInTheMiddleOfTyping = true  
+        userIsInTheMiddleOfTyping = true
     }
 }
 
